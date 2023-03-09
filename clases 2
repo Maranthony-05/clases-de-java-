@@ -45,6 +45,14 @@ public class frm01 extends JFrame {
 		lblMujeres.setBounds(30, 60, 60, 25);
 		getContentPane().add(lblMujeres);
 		
+		lblPVarones = new JLabel();
+		lblPVarones.setBounds(150, 30, 60, 25);
+		getContentPane().add(lblPVarones);
+		
+		lblPMujeres = new JLabel();
+		lblPMujeres.setBounds(150, 60, 60, 25);
+		getContentPane().add(lblPMujeres);
+		
 		txtVarones = new JTextField();
 		txtVarones.setBounds(100, 30, 50, 25);
 		txtVarones.setMargin( new Insets( 2, 5, 2, 5 ));
@@ -70,21 +78,16 @@ public class frm01 extends JFrame {
 	}
 
 	protected void btnCalcular_actionPerformed() {
-		// TODO Auto-generated method stud
-		int Varones = Integer.parseInt(txtVarones.getText());
-		int Mujeres = Integer.parseInt(txtMujeres.getText());
+		int varones = Integer.parseInt(txtVarones.getText());
+		int mujeres = Integer.parseInt(txtMujeres.getText());
 		
 		int total = varones + mujeres;
 		double pVarones = varones * 100.0 / total;
 		double pMujeres = mujeres * 100.0 / total;
 		
 		DecimalFormat df= new DecimalFormat("##.##");
-		lblPVarones.setText( df.format(pVarones) + "&" );
-		lblPMujeres.setText( df.format(pMujeres) + "&" );
-
+		lblPVarones.setText( df.format(pVarones) + "%" );
+		lblPMujeres.setText( df.format(pMujeres) + "%" );
+	}   	
 		
-	}
-		   	
-		
-	}
 }
